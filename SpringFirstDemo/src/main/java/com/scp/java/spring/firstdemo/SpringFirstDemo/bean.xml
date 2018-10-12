@@ -1,0 +1,29 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "EmpRef" class = "com.scp.java.spring.firstdemo.SpringFirstDemo.Employee" scope="prototype">
+      <property name = "eId" value = "101"/>
+      <property name = "eName" value = "DSK"/>
+      <property name = "eAdd" ref="AddrRef"/>
+      <property name = "eSalary" value = "12000"/>
+    </bean>
+   
+   <bean id = "AddrRef" class = "com.scp.java.spring.firstdemo.SpringFirstDemo.Address" scope="singleton">
+      <property name = "pinCode" value = "414304"/>
+      <property name = "city" value = "Pune"/>
+   </bean>
+   
+   
+   <!-- <bean id = "EmpRef2" class = "com.scp.java.spring.firstdemo.SpringFirstDemo.Employee">
+     <constructor-arg ref="Employee"></constructor-arg>
+     <property name="eId" value="20" ></property> 
+     <property name="eName" value="Sai" ></property> 
+     <property name="eSalary" value="20900" ></property> 
+     <property name="eAdd" ref="AddrRef"></property>      
+   </bean> -->
+
+</beans>

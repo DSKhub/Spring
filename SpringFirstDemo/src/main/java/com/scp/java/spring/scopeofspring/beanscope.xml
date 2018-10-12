@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="ProdRef" class="com.scp.java.spring.scopeofspring.Product" scope="prototype">
+		<constructor-arg name="prodId" value="101" ></constructor-arg>
+		<constructor-arg name="prodName" value="Mobile" ></constructor-arg>
+		<constructor-arg name="vendorob" ref="VendRef"></constructor-arg>
+		<constructor-arg name="prodPrice" value="45000"></constructor-arg>
+			
+		
+		<!-- <property name="prodId" value="11"></property>
+		<property name="prodName" value="Laptop"></property>
+		<property name="vendorob" ref="VendRef"></property>
+		<property name="prodPrice" value="150000"></property> -->
+	</bean>
+	
+	<bean id="ProdRef1" class="com.scp.java.spring.scopeofspring.Product" scope="prototype">
+		<constructor-arg name="prodName" value="Laptop" index="0"></constructor-arg>
+		<constructor-arg name="vendorob" ref="VendRef"></constructor-arg>
+	</bean>	
+
+    <bean id="ProdRef2" class="com.scp.java.spring.scopeofspring.Product" scope="prototype">
+		<constructor-arg value="22" ></constructor-arg>
+		<constructor-arg  value="Cosmatic" index="1"></constructor-arg>
+		<constructor-arg value="1000"></constructor-arg>
+   </bean>			
+	<bean id="VendRef" class="com.scp.java.spring.scopeofspring.Vendor">
+		<property name="pinCode" value="414243"></property>
+		<property name="city" value="Pune"></property>
+	</bean>
+	<!-- name="prodId" name="prodName" name="prodPrice"  -->
+</beans>

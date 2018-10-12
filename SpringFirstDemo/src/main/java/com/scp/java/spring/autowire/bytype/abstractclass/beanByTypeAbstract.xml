@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "personRef" class = "com.scp.java.spring.autowire.bytype.abstractclass.Person" >
+      <property name = "personId" value = "101"/>
+      <property name = "personName" value = "DSK"/>
+      <lookup-method name="getAdhar" bean="adhar"/>
+      <property name = "personAdd" value = "Pune"/>
+     </bean>
+   
+   <bean id = "adhar" class = "com.scp.java.spring.autowire.bytype.abstractclass.AdharCardCompsite" scope="prototype">
+      <property name = "adharId" value = "6666"/>
+      <property name = "state" value = "MH"/>
+   </bean>
+   
+</beans>
